@@ -10,8 +10,8 @@ interface TypewriterProps {
 
 const Typewriter: React.FC<TypewriterProps> = ({
   strings,
-  typingSpeed = 120,
-  pause = 2000,
+  typingSpeed = 70,
+  pause = 1800,
   loop = true,
 }) => {
   const [text, setText] = useState("");
@@ -45,7 +45,11 @@ const Typewriter: React.FC<TypewriterProps> = ({
     return () => clearTimeout(timeout);
   }, [charIndex, deleting, index, strings, typingSpeed, pause]);
 
-  return <span>{text}</span>;
+  return (
+    <div className="overflow-hidden whitespace-nowrap h-6 w-full text-center font-bold">
+      <span>{text}</span>
+    </div>
+  );
 };
 
 export default Typewriter;
