@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Typewriter from "./Typewriter";
 
 export default function Home() {
   return (
@@ -7,6 +8,9 @@ export default function Home() {
         <h1 className="text-9xl font-bold text-center sm:text-left">
           Takeover{" "}
         </h1>
+        <div className="text-center sm:text-left max-w-[600px]">
+          <Typewriter strings={["Hello", "World"]} loop={true} />
+        </div>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
